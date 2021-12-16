@@ -4,4 +4,4 @@ Final project for ME 506, Two-Phase Flow and Heat Transfer, at Purdue University
 
 Solves the equation of motion (EoM) for pipes conveying two-phase flows using the Galerkin method; a fluid-structure interaction problem. Used to study the dynamics of the pipe, such as the response, bifurcations, and critical flow velocities, for different two-phase flow parameters.
 
-<img src="https://raw.githubusercontent.com/jbrillon/quickplotlib/master/Figures/argand_pd_comparison.png" width="50%"></img>
+![argand_diagram_paidoussis_comparison](https://raw.githubusercontent.com/jbrillon/quickplotlib/master/Figures/argand_pd_comparison.png)
