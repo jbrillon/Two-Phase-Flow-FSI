@@ -32,7 +32,7 @@ u_mkr_values = list(u_mkr_values)
 modes = range(1,Nmodes+1)
 names = [None]*Nmodes
 for l in range(0,Nmodes):
-	names[l] = "Mode %i" % modes[l]
+    names[l] = "Mode %i" % modes[l]
 
 subdirectories[0] += 'restabilization/'
 #-----------------------------------------------------
@@ -65,7 +65,7 @@ omega = real_omega + (1.0j)*imag_omega
 nstop = [2999,2000,2000,2000]
 
 for i in range(0,4):
-	ax.plot(np.real(omega[:nstop[i],i]), np.imag(omega[:nstop[i],i]),color=clr[i])
+    ax.plot(np.real(omega[:nstop[i],i]), np.imag(omega[:nstop[i],i]),color=clr[i])
 
 #-----------------------------------------------------
 # Load data -- eps = 0.01
@@ -81,10 +81,10 @@ imag_omega = np.loadtxt(subdirectories[0]+subsubdir+data_fileName+'.'+data_fileT
 omega = real_omega + (1.0j)*imag_omega
 
 for i in range(0,4):
-	ax.plot(np.real(omega[:nstop[i],i]), np.imag(omega[:nstop[i],i]),color=clr[i],linestyle='--')
+    ax.plot(np.real(omega[:nstop[i],i]), np.imag(omega[:nstop[i],i]),color=clr[i],linestyle='--')
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# 				Annotate velocities
+#               Annotate velocities
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 data_fileName = 'u_crit'
 u_crit = np.loadtxt(subdirectories[0]+subsubdir+data_fileName+'.'+data_fileType, unpack=False)
@@ -100,13 +100,13 @@ u_crit_index = np.argmin(abs(u_crit-u_mkrs))
 
 u_mkrs_index = []
 for i,u_val in enumerate(u_mkrs):
-	index = np.argmin(abs(np.float64(u_val)-u))
-	u_mkrs_index.append(index)
+    index = np.argmin(abs(np.float64(u_val)-u))
+    u_mkrs_index.append(index)
 
 u_mkrs_xy = np.zeros((len(u_mkrs_index),2,4),dtype='float64')
 for i in range(0,4):
-	u_mkrs_xy[:,0,i] = np.real(omega[u_mkrs_index,i])
-	u_mkrs_xy[:,1,i] = np.imag(omega[u_mkrs_index,i])
+    u_mkrs_xy[:,0,i] = np.real(omega[u_mkrs_index,i])
+    u_mkrs_xy[:,1,i] = np.imag(omega[u_mkrs_index,i])
 
 u_mkrs = np.array(u_mkrs,dtype='float64')
 
@@ -123,23 +123,23 @@ yshifts[2] = 0.7
 
 plot_flag = 1
 for i in range(3,4):
-	for k,u_val in enumerate(u_mkrs):
-		if(k==u_crit_index):
-			if(u_crit_flag[i,0]!=0):
-				plot_flag = 1
-			else:
-				plot_flag = 0
-		else:
-			plot_flag = 1
+    for k,u_val in enumerate(u_mkrs):
+        if(k==u_crit_index):
+            if(u_crit_flag[i,0]!=0):
+                plot_flag = 1
+            else:
+                plot_flag = 0
+        else:
+            plot_flag = 1
 
-		if(plot_flag != 0):
-			xloc = xshifts[k,i]+u_mkrs_xy[k,0,i]
-			yloc = yshifts[k,i]+u_mkrs_xy[k,1,i]
-			if(((xloc>xlimits[0]) and (xloc<xlimits[1])) and ((yloc>ylimits[0]) and (yloc<ylimits[1]))):
-				ax.plot(u_mkrs_xy[k,0,i],u_mkrs_xy[k,1,i],color=clr[i],marker='o',markersize=4, mfc=clr[i], linestyle='None')
-				vel_name = '%.1f' % u_val
-				t = ax.text(xloc, yloc, vel_name, fontsize=11, fontweight='bold',color=clr[i])
-				t.set_bbox(dict(boxstyle='square,pad=0',facecolor='white', alpha=0.7 , edgecolor='none'))
+        if(plot_flag != 0):
+            xloc = xshifts[k,i]+u_mkrs_xy[k,0,i]
+            yloc = yshifts[k,i]+u_mkrs_xy[k,1,i]
+            if(((xloc>xlimits[0]) and (xloc<xlimits[1])) and ((yloc>ylimits[0]) and (yloc<ylimits[1]))):
+                ax.plot(u_mkrs_xy[k,0,i],u_mkrs_xy[k,1,i],color=clr[i],marker='o',markersize=4, mfc=clr[i], linestyle='None')
+                vel_name = '%.1f' % u_val
+                t = ax.text(xloc, yloc, vel_name, fontsize=11, fontweight='bold',color=clr[i])
+                t.set_bbox(dict(boxstyle='square,pad=0',facecolor='white', alpha=0.7 , edgecolor='none'))
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 plt.text(1, -1.5, r'\textbf{Mode 1}', {'color': clr[0], 'fontsize': 13})
@@ -148,7 +148,7 @@ plt.text(70, 11, r'\textbf{Mode 3}', {'color': clr[2], 'fontsize': 13})
 plt.text(121, -1.5, r'\textbf{Mode 4}', {'color': clr[3], 'fontsize': 13})
 
 legend_elements = [Line2D([0],[0], color='k', label=r'Paidoussis (1970) $(\epsilon=0)$'),
-						Line2D([0],[0], color='k', linestyle='--', label=r'Two-phase $(\epsilon=0.1)$')]
+                        Line2D([0],[0], color='k', linestyle='--', label=r'Two-phase $(\epsilon=0.1)$')]
 leg = plt.legend(handles=legend_elements, loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 plt.tight_layout()
 
@@ -172,7 +172,7 @@ plt.close()
 # # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 # ax.axhline(y=0, color='k', linestyle='--')
 # for i in range(0,Nmodes):
-# 	ax.plot(u, np.imag(omega[:,i]),label=('%i'%i))
+#   ax.plot(u, np.imag(omega[:,i]),label=('%i'%i))
 # leg = plt.legend(loc='best', ncol=3, shadow=True, fancybox=True, fontsize=13)
 # print('\t ... Saving figure ...')
 # plt.savefig(subdirectories[1] + figure_fileName + '.' + figure_fileType,bbox_inches='tight',format=figure_fileType,dpi=500)

@@ -13,7 +13,7 @@ matplotlibrc('font', family='serif')
 #-----------------------------------------------------
 subdirectories = ['Data/','Figures/']
 data_fileType = 'txt'
-figure_fileType = 'pdf'	
+figure_fileType = 'pdf' 
 clr = ['b','r','g','m','c','k','y']
 mrkr = ['s','o','^','v','>','<','d']
 #-----------------------------------------------------
@@ -24,8 +24,8 @@ alpha = np.linspace(0.0001,1.0,n)
 betaL = np.zeros((n,n),dtype='float64')
 
 for j in range(0,n):
-	for i in range(0,n):
-		betaL[i,j] = GetBetaL_betaLO(rhoL, rhoG, betaLO[j], alpha[i])
+    for i in range(0,n):
+        betaL[i,j] = GetBetaL_betaLO(rhoL, rhoG, betaLO[j], alpha[i])
 
 #-----------------------------------------------------
 X, Y = np.meshgrid(alpha,betaLO)
@@ -47,7 +47,7 @@ fig.colorbar(cs,label=r'$\beta_{l}$ ($2\phi$ Liquid)',ticks=np.arange(0,1.01,0.1
 
 # Fix for the white lines between contour levels
 for c in cs.collections:
-	c.set_edgecolor("face")
+    c.set_edgecolor("face")
 
 plt.tight_layout()
 print('... Saving figure ...')

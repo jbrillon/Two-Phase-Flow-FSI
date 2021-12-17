@@ -16,18 +16,18 @@ from responseVar import *
 #-----------------------------------------------------
 # load response
 if(u_fixed_flag == 0):
-	data_fileName = 'eta_tip'
-	eta = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
-	data_fileName = 'tau'
-	tau = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
+    data_fileName = 'eta_tip'
+    eta = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
+    data_fileName = 'tau'
+    tau = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
 elif(u_fixed_flag == 1):
-	subsubdir_data += 'space/'
-	data_fileName = 'eta_space'
-	eta = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
-	data_fileName = 'tau'
-	tau = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
-	data_fileName = 'xi'
-	xi = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
+    subsubdir_data += 'space/'
+    data_fileName = 'eta_space'
+    eta = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
+    data_fileName = 'tau'
+    tau = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
+    data_fileName = 'xi'
+    xi = np.loadtxt(subdirectories[0]+subsubdir_data+data_fileName+'.'+data_fileType, unpack=False)
 #-----------------------------------------------------
 ndpi = 500 # set to 500
 
@@ -54,10 +54,10 @@ ax.set_xlim([ylimits[0], ylimits[1]])
 
 i = 26
 for k in range(10,np_time):
-	if(i==26):
-		ax.plot(eta[k,:],xi,linewidth='1.5',color=cmap.to_rgba(tau[k]))
-		i = 0
-	i += 1
+    if(i==26):
+        ax.plot(eta[k,:],xi,linewidth='1.5',color=cmap.to_rgba(tau[k]))
+        i = 0
+    i += 1
 
 plt.gca().invert_yaxis()
 

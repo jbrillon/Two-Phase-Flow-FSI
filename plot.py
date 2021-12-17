@@ -20,7 +20,7 @@ mrkr = ['s','o','^','v','>','<','d']
 modes = range(1,Nmodes+1)
 names = [None]*Nmodes
 for l in range(0,Nmodes):
-	names[l] = "Mode %i" % modes[l]
+    names[l] = "Mode %i" % modes[l]
 #-----------------------------------------------------
 # Load data
 #-----------------------------------------------------
@@ -51,7 +51,7 @@ ax.set_xlim([-1, 60])
 ax.set_ylim([-25, 25])
 ax.axhline(y=0, color='k', linestyle='--')
 for i in range(0,4):
-	ax.plot(np.real(omega[:,i]), np.imag(omega[:,i]),label=names[i])
+    ax.plot(np.real(omega[:,i]), np.imag(omega[:,i]),label=names[i])
 # leg = plt.legend(loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 print('\t ... Saving figure ...')
@@ -74,7 +74,7 @@ ax.set_ylim([-20, 20])
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 # ax.axhline(y=0, color='k', linestyle='-')
 for i in range(0,Nmodes):
-	ax.plot(u, np.imag(omega[:,i]),label=('%i'%i),linestyle='--')
+    ax.plot(u, np.imag(omega[:,i]),label=('%i'%i),linestyle='--')
 # leg = plt.legend(loc='best', ncol=3, shadow=True, fancybox=True, fontsize=13)
 print('\t ... Saving figure ...')
 plt.savefig(subdirectories[1] + figure_fileName + '.' + figure_fileType,bbox_inches='tight',format=figure_fileType,dpi=500)
@@ -96,7 +96,7 @@ ax.set_ylim([-1, 125])
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 # ax.axhline(y=0, color='k', linestyle='-')
 for i in range(0,Nmodes):
-	ax.plot(u, np.real(omega[:,i]),label=('%i'%i),linestyle='--')
+    ax.plot(u, np.real(omega[:,i]),label=('%i'%i),linestyle='--')
 # leg = plt.legend(loc='best', ncol=3, shadow=True, fancybox=True, fontsize=13)
 print('\t ... Saving figure ...')
 plt.savefig(subdirectories[1] + figure_fileName + '.' + figure_fileType,bbox_inches='tight',format=figure_fileType,dpi=500)
@@ -119,7 +119,7 @@ ax.set_ylim([-20, 30])
 ax.set_aspect(1.2)
 ax.axhline(y=0, color='k', linestyle='--')
 for i in range(0,4):
-	ax.plot(np.real(omega[:,i]), np.imag(omega[:,i]),label=names[i])
+    ax.plot(np.real(omega[:,i]), np.imag(omega[:,i]),label=names[i])
 leg = plt.legend(loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 print('\t ... Saving figure ...')
@@ -141,7 +141,7 @@ ax.set_ylim([-20, 30])
 ax.set_aspect(1.2)
 ax.axhline(y=0, color='k', linestyle='--')
 for i in range(0,Nmodes):
-	ax.scatter(np.real(omega_scatter[:,i]), np.imag(omega_scatter[:,i]))
+    ax.scatter(np.real(omega_scatter[:,i]), np.imag(omega_scatter[:,i]))
 # leg = plt.legend(loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 print('\t ... Saving figure ...')
@@ -166,7 +166,7 @@ ax.set_ylim([-20, 20])
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 ax.axhline(y=0, color='k', linestyle='--')
 for i in range(0,Nmodes):
-	ax.plot(u, np.imag(omega[:,i]),label=names[i])
+    ax.plot(u, np.imag(omega[:,i]),label=names[i])
 leg = plt.legend(loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 print('\t ... Saving figure ...')
 plt.savefig(subdirectories[1] + figure_fileName + '.' + figure_fileType,bbox_inches='tight',format=figure_fileType,dpi=500)
@@ -188,7 +188,7 @@ ax.set_ylim([-20, 20])
 # ax.plot(x_axis_plot,np.zeros(npoints),'k')
 ax.axhline(y=0, color='k', linestyle='--')
 for i in range(0,Nmodes):
-	ax.plot(u, np.real(omega[:,i]),label=names[i])
+    ax.plot(u, np.real(omega[:,i]),label=names[i])
 leg = plt.legend(loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 print('\t ... Saving figure ...')
 plt.savefig(subdirectories[1] + figure_fileName + '.' + figure_fileType,bbox_inches='tight',format=figure_fileType,dpi=500)

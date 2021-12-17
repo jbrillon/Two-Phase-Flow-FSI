@@ -1,6 +1,6 @@
 import numpy as np
 #*****************************************************
-# 				GENERAL VARIABLES
+#               GENERAL VARIABLES
 #*****************************************************
 #=====================================================
 # Common file parameters
@@ -37,56 +37,56 @@ lambdas = np.zeros(Nmodes, dtype='float128')
 # Eigenvalues
 #-----------------------------------------------------
 if(EndCond == 'fixed-free'):
-	lambdas[0] = 1.87510406871196
-	lambdas[1] = 4.69409113297417
-	lambdas[2] = 7.85475743823761
-	lambdas[3] = 10.9955407348754
-	if(Nmodes > 4):
-		lambdas[4] = 14.1372
-		lambdas[5] = 17.2788
-		lambdas[6] = 20.4204
-		lambdas[7] = 23.5619
-	if(Nmodes > 8):
-		lambdas[8] = 26.7035
-		lambdas[9] = 29.8451
-	if(Nmodes > 10):
-		lambdas[10] = 32.9867
+    lambdas[0] = 1.87510406871196
+    lambdas[1] = 4.69409113297417
+    lambdas[2] = 7.85475743823761
+    lambdas[3] = 10.9955407348754
+    if(Nmodes > 4):
+        lambdas[4] = 14.1372
+        lambdas[5] = 17.2788
+        lambdas[6] = 20.4204
+        lambdas[7] = 23.5619
+    if(Nmodes > 8):
+        lambdas[8] = 26.7035
+        lambdas[9] = 29.8451
+    if(Nmodes > 10):
+        lambdas[10] = 32.9867
 
 elif((EndCond == 'fixed-fixed') or (EndCond == 'free-free')):
-	lambdas[0] = 4.730041
-	lambdas[1] = 7.853205
-	lambdas[2] = 10.995608
-	lambdas[3] = 14.137165
-	if(Nmodes > 4):
-		lambdas[4] = 17.2788
-		lambdas[5] = 20.4204
-		lambdas[6] = 23.5619
-		lambdas[7] = 26.7035
-	if(Nmodes > 8):
-		lambdas[8] = 29.8451
-		lambdas[9] = 32.9867
-	if(Nmodes > 10):
-		lambdas[10] = 36.1283
+    lambdas[0] = 4.730041
+    lambdas[1] = 7.853205
+    lambdas[2] = 10.995608
+    lambdas[3] = 14.137165
+    if(Nmodes > 4):
+        lambdas[4] = 17.2788
+        lambdas[5] = 20.4204
+        lambdas[6] = 23.5619
+        lambdas[7] = 26.7035
+    if(Nmodes > 8):
+        lambdas[8] = 29.8451
+        lambdas[9] = 32.9867
+    if(Nmodes > 10):
+        lambdas[10] = 36.1283
 
 elif(EndCond == 'pinned-pinned'):
-	for i in range(0,Nmodes):
-		lambdas[i] = np.float128(np.pi)*np.float128(i+1)
+    for i in range(0,Nmodes):
+        lambdas[i] = np.float128(np.pi)*np.float128(i+1)
 
 elif(EndCond == 'fixed-pinned'):
-	lambdas[0] = 3.926602
-	lambdas[1] = 7.068583
-	lambdas[2] = 10.210176
-	lambdas[3] = 13.351768
-	if(Nmodes > 4):
-		lambdas[4] = 16.4934
-		lambdas[5] = 19.635
-		lambdas[6] = 22.7765
-		lambdas[7] = 25.9181
-	if(Nmodes > 8):
-		lambdas[8] = 29.0597
-		lambdas[9] = 32.2013
-	if(Nmodes > 10):
-		lambdas[10] = 35.3429
+    lambdas[0] = 3.926602
+    lambdas[1] = 7.068583
+    lambdas[2] = 10.210176
+    lambdas[3] = 13.351768
+    if(Nmodes > 4):
+        lambdas[4] = 16.4934
+        lambdas[5] = 19.635
+        lambdas[6] = 22.7765
+        lambdas[7] = 25.9181
+    if(Nmodes > 8):
+        lambdas[8] = 29.0597
+        lambdas[9] = 32.2013
+    if(Nmodes > 10):
+        lambdas[10] = 35.3429
 #-----------------------------------------------------
 # Extended Galerkin Method -- move to sep file
 #-----------------------------------------------------

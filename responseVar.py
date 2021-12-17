@@ -1,7 +1,7 @@
 import numpy as np
 from var import subdirectories,data_fileType
 #*****************************************************
-# 				GENERAL VARIABLES
+#               GENERAL VARIABLES
 #*****************************************************
 #=====================================================
 # Common file parameters
@@ -34,8 +34,8 @@ subsubdir_data_2p = 'highvelocity/2p/'
 #-----------------------------------------------------
 u_fixed = 15.85
 if(u_fixed_flag == 1):
-	k_fixed = np.argmin(abs(u_fixed-u_store))
-	print('Fixed velocity: u = %.2f\n' % u_store[k_fixed])
-	iStart = 1*k_fixed
-	iEnd = iStart+1
+    k_fixed = np.argmin(abs(u_fixed-u_store))
+    print('Fixed velocity: u = %.2f\n' % u_store[k_fixed])
+    iStart = 1*k_fixed
+    iEnd = iStart+1
 

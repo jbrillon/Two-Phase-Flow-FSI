@@ -32,7 +32,7 @@ u_mkr_values = list(u_mkr_values)
 modes = range(1,Nmodes+1)
 names = [None]*Nmodes
 for l in range(0,Nmodes):
-	names[l] = "Mode %i" % modes[l]
+    names[l] = "Mode %i" % modes[l]
 
 subdirectories[0] += 'clamped/'
 #-----------------------------------------------------
@@ -63,7 +63,7 @@ imag_omega = np.loadtxt(subdirectories[0]+subsubdir+data_fileName+'.'+data_fileT
 omega = real_omega + (1.0j)*imag_omega
 
 for i in range(0,2):
-	ax.plot(u, np.imag(omega[:,i]),color=clr[i],linestyle='-')
+    ax.plot(u, np.imag(omega[:,i]),color=clr[i],linestyle='-')
 
 #-----------------------------------------------------
 # Load data -- two phase
@@ -79,7 +79,7 @@ imag_omega = np.loadtxt(subdirectories[0]+subsubdir+data_fileName+'.'+data_fileT
 omega = real_omega + (1.0j)*imag_omega
 
 for i in range(0,2):
-	ax.plot(u, np.imag(omega[:,i]),color=clr[i],linestyle='--')
+    ax.plot(u, np.imag(omega[:,i]),color=clr[i],linestyle='--')
 
 plt.text(1, 5, r'\textbf{Mode 1}', {'color': clr[0], 'fontsize': 13})
 plt.text(1, 1, r'\textbf{Mode 2}', {'color': clr[1], 'fontsize': 13})
@@ -87,7 +87,7 @@ plt.text(1, 1, r'\textbf{Mode 2}', {'color': clr[1], 'fontsize': 13})
 # plt.text(67, 1, r'\textbf{Mode 4}', {'color': clr[2], 'fontsize': 13})
 
 legend_elements = [Line2D([0],[0], color='k', linestyle='-', label=r'Liquid only $(\epsilon=0)$'),
-					Line2D([0],[0], color='k', linestyle='--', label=r'Two-phase $(\epsilon=0.4)$')]
+                    Line2D([0],[0], color='k', linestyle='--', label=r'Two-phase $(\epsilon=0.4)$')]
 leg = plt.legend(handles=legend_elements, loc='best', ncol=1, shadow=True, fancybox=True, fontsize=13)
 plt.tight_layout()
 
